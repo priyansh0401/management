@@ -8,7 +8,6 @@ import morgan from "morgan";
 import transactionRoutes from "./Routers/Transactions.js";
 import userRoutes from "./Routers/userRouter.js";
 import path from "path";
-
 dotenv.config({ path: "./config/config.env" });
 const app = express();
 
