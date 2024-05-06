@@ -19,6 +19,10 @@ connectDB();
 const allowedOrigins = [
   "https://main.d1sj7cd70hlter.amplifyapp.com",
   "https://expense-tracker-app-three-beryl.vercel.app",
+  "https://www.moneyminds.tech/",
+  "https://management-sage.vercel.app/",
+  "https://management-sage.vercel.app",
+  "https://www.moneyminds.tech"
   // add more origins as needed
 ];
 
