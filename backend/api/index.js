@@ -1,12 +1,12 @@
 import express from "express";
 import cors from "cors";
-import { connectDB } from "./DB/Database.js";
+import { connectDB } from "../DB/Database.js";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import transactionRoutes from "./Routers/Transactions.js";
-import userRoutes from "./Routers/userRouter.js";
+import transactionRoutes from "../Routers/Transactions.js";
+import userRoutes from "../Routers/userRouter.js";
 import path from "path";
 
 dotenv.config({ path: "./config/config.env" });
