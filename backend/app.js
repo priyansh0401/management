@@ -12,7 +12,7 @@ import path from "path";
 dotenv.config({ path: "./config/config.env" });
 const app = express();
 
-const port = process.env.PORT;
+const port = 3000;
 
 connectDB();
 
