@@ -5,7 +5,7 @@ export const registerControllers = async (req, res, next) => {
     try{
         const {name, email, password} = req.body;
 
-        // console.log(name, email, password);
+         console.log(name, email, password);
 
         if(!name || !email || !password){
             return res.status(400).json({
@@ -27,7 +27,7 @@ export const registerControllers = async (req, res, next) => {
 
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        // console.log(hashedPassword);
+        console.log(hashedPassword);
 
         let newUser = await User.create({
             name, 
@@ -53,7 +53,7 @@ export const loginControllers = async (req, res, next) => {
     try{
         const { email, password } = req.body;
 
-        // console.log(email, password);
+         console.log(email, password);
   
         if (!email || !password){
             return res.status(400).json({

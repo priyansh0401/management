@@ -12,31 +12,29 @@ import path from "path";
 dotenv.config({ path: "./config/config.env" });
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 connectDB();
 
-const allowedOrigins = [
-  "https://main.d1sj7cd70hlter.amplifyapp.com",
-  "https://expense-tracker-app-three-beryl.vercel.app",
-  "https://www.moneyminds.tech/",
-  "https://management-sage.vercel.app/",
-  "https://management-sage.vercel.app",
-  "https://www.moneyminds.tech"
-  // add more origins as needed
-];
+// const allowedOrigins = [
+//   "https://main.d1sj7cd70hlter.amplifyapp.com",
+//   "https://expense-tracker-app-three-beryl.vercel.app",
+//   // add more origins as needed
+// ];
+
+const allowedOrigins = ["*"];
 
 // Middleware
 app.use(express.json());
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: "*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+// app.use(helmet.OriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
