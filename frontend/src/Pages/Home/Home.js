@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { Button, Modal, Form, Container } from "react-bootstrap";
-import loading from "../../assets/loader.gif";
+// import loading from "../../assets/loader.gif";
 import "./home.css";
 import { addTransaction, getTransactions } from "../../utils/ApiRequest";
 import axios from "axios";

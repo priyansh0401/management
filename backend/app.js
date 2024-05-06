@@ -1,26 +1,24 @@
 import express from "express";
 import cors from "cors";
-import { connectDB } from "../DB/Database.js";
+import { connectDB } from "./DB/Database.js";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import transactionRoutes from "../Routers/Transactions.js";
-import userRoutes from "../Routers/userRouter.js";
+import transactionRoutes from "./Routers/Transactions.js";
+import userRoutes from "./Routers/userRouter.js";
 import path from "path";
 
 dotenv.config({ path: "./config/config.env" });
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 connectDB();
 
 const allowedOrigins = [
   "https://main.d1sj7cd70hlter.amplifyapp.com",
   "https://expense-tracker-app-three-beryl.vercel.app",
-  "www.moneyminds.tech",
-  "https://www.moneyminds.tech"
   // add more origins as needed
 ];
 
