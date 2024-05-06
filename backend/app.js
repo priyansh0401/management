@@ -8,21 +8,13 @@ import morgan from "morgan";
 import transactionRoutes from "./Routers/Transactions.js";
 import userRoutes from "./Routers/userRouter.js";
 import path from "path";
-import mongoose from "mongoose";
 
 dotenv.config({ path: "./config/config.env" });
 const app = express();
 
 const port = process.env.PORT || 3000;
 
-const connectDB = async (req, res) => {
-  const db = "mongodb+srv://priyansh0401:projectlogin@login.rqsthm7.mongodb.net/?retryWrites=true&w=majority&appName=login";
-
-  const {connection} = await mongoose.connect(db, { useNewUrlParser: true });
-
-  console.log(`MongoDB Connected to ${connection.host}`);
-
-}
+connectDB();
 
 const allowedOrigins = [
   "https://main.d1sj7cd70hlter.amplifyapp.com",
